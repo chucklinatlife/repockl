@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+
+function submit_brd(){
+var data = {
+"PROJ" : $('#projectID').val(),
+"BRDF" : $('#brdfileID').val(),
+"NET2A" : $('#net2analyzeID').val(),
+"VRM" : $('#vrmID').val(),
+'VRML': $('#vrmIndID').val(),
+'SINKC': $('#sinkCompID').val()
+
+};
+ $.getJSON("{{ url_for('load_ajax') }}", data, function(data) {
+       console.log(data);
+      });
+      return false;
+}
+
+function autofill(){
+$('#projectID').val('project'),
+$('#brdfileID').val('brdfile'),
+$('#net2analyzeID').val('net2analyze'),
+$('#vrmID').val('vrm'),
+$('#vrmIndID').val('vrml'),
+$('#sinkCompID').val('sink')
+};
+
+</script>
+
+</head>
+<body>
+<p> Test Configuration Interface </p>
+<br>
+Project: <input type="text" name="project" placeholder="insert project title here (ex. BCM7445)" id="projectID"><br>
+Board file: <input type="text" name="brdfile" placeholder="insert brd file name here" id="brdfileID"><br> 
+Net to Analyze: <input type="text" name="net2analyze" placeholder="insert net to analyze here" id="net2analyzeID"><br>
+Voltage Regulator Module: <input type="text" name="vrm" placeholder="insert component here" id="vrmID"><br>
+VRM Inductor: <input type="text" name="vrmL" placeholder="insert VRM Inductor name here" id="vrmIndID"><br>
+Sink Component: <input type="text" name= "sinkComp" placeholder="insert sink component" id="sinkCompID"><br>
+
+<button onclick="autofill()">Click if LAZY</button>
+<button onclick="submit_brd()">click here </button>
+
+</body>
+</html>
+
