@@ -23,11 +23,13 @@ def load_ajax():
 	sink = request.args.get("SINKC")
 	#vrm inductor
 	vrml = request.args.get("VRML")
+	file = request.args.get("file")
+
 	#What machine to run?
 	
 	#Project?
 	
-	printform(brdfile, net2analyze, vrm, sink, vrml)
+	printform(file, brdfile, net2analyze, vrm, sink, vrml)
 	#main()
 	# return jsonify(result = brdfile), jsonify(result=net2analyze), jsonify(result=vrm), jsonify(result=sink), jsonify(result=vrml)
 	#return jsonify(result=brdfile)

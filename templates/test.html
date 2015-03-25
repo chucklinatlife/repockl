@@ -11,8 +11,8 @@ var data = {
 "NET2A" : $('#net2analyzeID').val(),
 "VRM" : $('#vrmID').val(),
 'VRML': $('#vrmIndID').val(),
-'SINKC': $('#sinkCompID').val()
-
+'SINKC': $('#sinkCompID').val(),
+'file': $('input[type=file]').val().replace(/C:\\fakepath\\/i, '')
 };
  $.getJSON("{{ url_for('load_ajax') }}", data, function(data) {
        console.log(data);
@@ -41,7 +41,7 @@ Net to Analyze: <input type="text" name="net2analyze" placeholder="insert net to
 Voltage Regulator Module: <input type="text" name="vrm" placeholder="insert component here" id="vrmID"><br>
 VRM Inductor: <input type="text" name="vrmL" placeholder="insert VRM Inductor name here" id="vrmIndID"><br>
 Sink Component: <input type="text" name= "sinkComp" placeholder="insert sink component" id="sinkCompID"><br>
-
+Test File Browser: <input type="file" name = "filename" placeholder="insert a file" id = "filenameID"><br>
 <button onclick="autofill()">Click if LAZY</button>
 <button onclick="submit_brd()">click here </button>
 
