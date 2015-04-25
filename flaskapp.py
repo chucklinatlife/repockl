@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, request, jsonify
-#from main import *
+#from main2 import *
 from printform import *
 import json
 app = Flask(__name__)
@@ -8,7 +8,7 @@ app = Flask(__name__)
 	# return "Hello world!"
 @app.route('/')
 def renderTest():
-	return render_template("test.html")
+	return render_template("beta.html")
 	
 @app.route('/load_ajax', methods = ["GET", "POST"])
 def load_ajax():
@@ -35,6 +35,6 @@ def load_ajax():
 	#return jsonify(result=brdfile)
 	return console.log('success')
 if __name__ == "__main__":
-	app.run(host='0.0.0.0')
+	app.run(debug=True,host='0.0.0.0')
 	
 

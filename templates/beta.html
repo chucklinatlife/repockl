@@ -1,0 +1,144 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title>jQuery UI Tabs - Default functionality</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+
+$(function() {
+$( "#jqtabs-ID" ).tabs({collapsible:true});
+});
+</script>
+<script>
+$(function() {
+$( document ).tooltip();
+});
+</script>
+<style>
+label {
+display: inline-block;
+width: 5em;
+}
+</style>
+<style>
+.ui-tabs-anchor{
+font-size: .8em;
+}
+#top-ID{
+width:100%;
+}
+#jqtabs-ID{
+width:60%;
+font-size: .8em;
+margin-top: 10px;
+}
+#statusLog-ID{
+display:none;
+}
+
+.ui-tabs .ui-tabs-panel{
+padding: .5em .5em;
+}
+
+.tab-fieldset{
+display: inline-block;
+vertical-align: top;
+padding: .4em;
+height: auto;
+width:30%;
+font-size: 12px;
+}
+
+#ResourceField-ID{
+width:10%;
+}
+
+#DCField-ID{
+width:25%;
+}
+
+.gen-input{
+padding-bottom: .2em;
+}
+p{
+color:red;
+margin: 2px;
+}
+hr{
+margin: 2px;
+}
+
+.input-small{
+width: 20%;
+}
+
+label{
+width: auto;
+}
+</style>
+</head>
+<body>
+<div id="top-ID">
+<form>
+<span class="gen-input"> <label>Project:</label> <input type="text" name="project" placeholder="project title" id="project-ID" value=""> &nbsp;&nbsp;&nbsp;&nbsp;
+<label>User:</label> <input type="text" name="user" placeholder="BRCM UserID" id="user-ID" value="">
+</span>
+<div id="jqtabs-ID" >
+<ul>
+<li><a href="#tab1-ID">POWER INTEGRITY</a></li>
+<li><a href="#tab2-ID">SIGNAL INTEGRITY</a></li>
+<li><a href="#tab3-ID">EM INTEFERENCE</a></li>
+</ul>
+<input id="statusLog-ID" type="text" value="" name="statusLog"></input>
+<div id="tab1-ID">
+<fieldset class="tab-fieldset" id="ResourceField-ID">
+<legend class="legendTitle">RESOURCE INFO</legend>
+<div style="display:inline-block;"><p>FILES &emsp;&emsp;&emsp;&emsp;&emsp;<button style="display:none">DELETE FILES</button><button>CLEAR RESOURCE PANEL</button></p>
+</div>
+<hr style="border-color:red">
+<label>Board File (.brd):</label>
+<div id="div-brdfile-ID">
+<input class="submitFile" type="file" name="brdfile" placeholder="BRDfile" id="brdfile-ID">
+</div>
+<hr>
+<label>CPM File (.sp.inc):</label>
+<div id="div-cpmfile-ID">
+<input class="submitFile" type="file" name="cpmfile" placeholder="CPM file" id="cpmfile-ID">
+</div>
+<hr>
+<label>MCM File (.mcm):</label>
+<div id="div-mcmfile-ID">
+<input class="submitFile" type="file" name="mcmfile" placeholder="MCM file" id="mcmfile-ID">
+</div>
+<hr>
+<div style="text-align: right;"> <button>UPLOAD FILE(S)</button> </div>
+</fieldset>
+<fieldset class="tab-fieldset" id="DCField-ID">
+<legend class="legendTitle">DC INFO</legend>
+<span>
+<label>Power Net:</label><input title="power net" class="input-small" type="text" name="pownet" id="pownet-ID" value=""> &emsp;
+<label>Ground Net:</label><input class="input-small" type="text" name="gndnet" id="gndnet-ID" value="">
+</span>
+<p>VRM/SINK PARAMETERS</p><hr style="border-color:red">
+
+
+
+
+</fieldset>
+<fieldset class="tab-fieldset" id="ACField-ID">
+<legend class="legendTitle">AC INFO</legend>
+</fieldset>
+</div>
+<div id="tab2-ID">
+UNDER DEVELOPMENT...
+</div>
+<div id="tab3-ID">
+UNDER DEVELOPMENT...
+</div>
+</div>
+</form>
+</div>
+</body>
+</html>
